@@ -17,9 +17,9 @@ module.exports = {
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'docs'),
-        publicPath: '/ece-simulator/'
+        publicPath: '/ECE-Student-Simulator/'
     },
-    mode: 'development',
+    mode: 'production',
     devtool: 'source-map',
     devServer: {
         static: {
