@@ -1,19 +1,17 @@
 {
     "compilerOptions": {
-        "noImplicitAny": true,
-        "removeComments": true,
-        "strictNullChecks": true,
-        "strictPropertyInitialization": true,
-        "sourceMap": true,
         "target": "ES6",
-        "moduleResolution": "Bundler",
+        "module": "ES6",
+        "moduleResolution": "node",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "outDir": "./dist",
         "rootDir": "./src",
-        "outDir": "./build",
-        "lib": [
-            "DOM", "ES2016"
-        ]
+        "sourceMap": true,
+        "lib": ["DOM", "ES6", "DOM.Iterable"]
     },
-    "exclude": [
-        "node_modules"
-    ]
+    "include": ["src/**/*"],
+    "exclude": ["node_modules"]
 }

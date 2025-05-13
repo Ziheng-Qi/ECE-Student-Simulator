@@ -1,10 +1,12 @@
 {
-  "name": "phd-game",
-  "version": "0.0.2",
-  "description": "A random event driven text-based game engine, for simulating a PhD student's life.",
+  "name": "ece-simulator",
+  "version": "1.0.0",
+  "description": "A simulator for ECE students at UIUC",
+  "main": "index.js",
   "scripts": {
-    "build": "npx webpack",
-    "start": "node app.js"
+    "start": "webpack serve --open",
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development --watch"
   },
   "author": "Mianzhi Wang",
   "license": "MIT",
@@ -12,9 +14,11 @@
     "copy-webpack-plugin": "^11.0.0",
     "express": "^4.18.2",
     "terser-webpack-plugin": "^5.3.9",
-    "ts-loader": "^9.4.4",
-    "typescript": "^5.2.2",
-    "webpack-cli": "^5.1.4"
+    "ts-loader": "^9.4.2",
+    "typescript": "^4.9.5",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
     "@types/js-yaml": "^4.0.5",

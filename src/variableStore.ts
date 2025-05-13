@@ -47,8 +47,40 @@ type VariableChangeHandler = (sender: VariableStore, event: VariableChangedEvent
 
 export class VariableStore implements JsonEncodable {
 
-    private _variables: Record<string, number> = {};
-    private _varLimits: Record<string, [number, number]> = {};
+    private _variables: Record<string, number> = {
+        // Academic
+        gpa: 3.0,
+        semester: 1,
+        month: 1,
+        year: 1,
+        
+        // Skills
+        programming: 50,
+        hardware: 50,
+        research: 0,
+        internship: 0,
+        timeManagement: 50,
+        
+        // Resources
+        energy: 100,
+        stress: 0,
+        money: 1000
+    };
+
+    private _varLimits: Record<string, [number, number]> = {
+        gpa: [0, 4.0],
+        semester: [1, 8],
+        month: [1, 12],
+        year: [1, 4],
+        programming: [0, 100],
+        hardware: [0, 100],
+        research: [0, 100],
+        internship: [0, 100],
+        timeManagement: [0, 100],
+        energy: [0, 100],
+        stress: [0, 100],
+        money: [0, 10000]
+    };
 
     /**
      * Variable changed event handler.

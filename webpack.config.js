@@ -1,40 +1,32 @@
-const CopyPlugin = require('copy-webpack-plugin');
-const TerserPlugin = require("terser-webpack-plugin");
 const path = require('path');
 
 module.exports = {
-    mode: "development",
-    entry: "./src/app.ts",
-    resolve: {
-        extensions: ['.ts', '.js']
-    },
-    target: ['web', 'es6'],
-    output: {
-        filename: "app.bundle.js",
-        path: path.join(__dirname, 'dist'),
-        clean: true
-    },
-    devtool: "source-map",
+    entry: './src/gui/gameUI.ts',
     module: {
         rules: [
             {
-                test: /\.ts$/,
-                loader: "ts-loader",
+                test: /\.tsx?$/,
+                use: 'ts-loader',
                 exclude: /node_modules/,
-            }
-        ]
+            },
+        ],
     },
-    optimization: {
-        minimize: true,
-        minimizer: [new TerserPlugin()],
+    resolve: {
+        extensions: ['.tsx', '.ts', '.js'],
     },
-    plugins: [
-        new CopyPlugin({
-            patterns: [{
-                from: path.join(__dirname, 'static'),
-                to: path.join(__dirname, 'dist')
-            }],
-        })
-    ],
-    stats: 'verbose'
+    output: {
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'docs'),
+        publicPath: '/ece-simulator/'
+    },
+    mode: 'development',
+    devtool: 'source-map',
+    devServer: {
+        static: {
+            directory: path.join(__dirname, 'docs'),
+        },
+        compress: true,
+        port: 8080,
+        hot: true,
+    },
 };
