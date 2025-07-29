@@ -2,8 +2,6 @@
 
 ## About
 
-Technically a random event driven text-based game.
-
 You can [play it here](https://research.wmz.ninja/projects/phd/index.html)
 (using modern browsers or mobile devices).
 
